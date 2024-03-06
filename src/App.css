@@ -1,0 +1,54 @@
+#root {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  text-align: center;
+  background-image: url("./img/bg.webp");
+  background-size: contain;
+  
+}
+
+h1 {
+  color : white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.theme-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+ 
+  
+}
+
+.theme {
+  flex: 0 0 calc(25% - 80px); 
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  
+}
+
+@media (max-width: 1000px) {
+  .theme {
+    flex: 0 0 calc(50% - 60px);
+  }
+}
+
+
+.theme img {
+  width: 35%; 
+}
+
+
+
+
+
+
