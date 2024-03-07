@@ -27,7 +27,7 @@ function App() {
         <h1>Pick a theme</h1>
         <div className="theme-container">
           {themes.map(theme => (
-            <div key={theme._id} className="theme" onClick={() => navigate(`/theme/${theme._id}`, [themes])} // Remplace Link par un div avec un onClick
+            <div key={theme._id} className="theme" onClick={() => navigate(`/theme/${theme._id}`, [themes])}
             >
               <img src={`./src/img/${theme.picture}`} alt={theme.theme} />
               <h2>{theme.label}</h2>
