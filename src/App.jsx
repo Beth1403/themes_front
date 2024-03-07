@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import ThemePage from './ThemePage';
-import './App.css';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import './App.css';
+import { useNavigate } from 'react-router-dom'; 
 
 function App() {
   const [themes, setThemes] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,24 +22,21 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    
       <div className="App">
         <h1>Pick a theme</h1>
         <div className="theme-container">
           {themes.map(theme => (
-            <div key={theme._id} className="theme">
-              <Link to={`/theme/${theme._id}`}>
-                <img src={`./src/img/${theme.picture}`} alt={theme.theme} />
-                <h2>{theme.label}</h2>
-              </Link>
+            <div key={theme._id} className="theme" onClick={() => navigate(`/theme/${theme._id}`, [themes])} // Remplace Link par un div avec un onClick
+            >
+              <img src={`./src/img/${theme.picture}`} alt={theme.theme} />
+              <h2>{theme.label}</h2>
             </div>
           ))}
         </div>
       </div>
-      <Routes>
-        <Route path="/theme/:id" element={<ThemePage/>} />
-      </Routes>
-    </Router>
+   
+    
   );
 }
 

@@ -35,7 +35,7 @@ useEffect(() => {
   };
 
   return (
-    <div>
+    <div className='App'>
       <h1>Theme Page</h1>
       {element && (
         <div>
